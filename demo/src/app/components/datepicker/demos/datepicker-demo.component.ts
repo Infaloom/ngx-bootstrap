@@ -21,6 +21,8 @@ export class DatepickerDemoComponent {
   };
   private opened: boolean = false;
 
+  public monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Avg', 'Sep', 'Okt', 'Nov', 'Dec'];
+
   public constructor() {
     (this.tomorrow = new Date()).setDate(this.tomorrow.getDate() + 1);
     (this.afterTomorrow = new Date()).setDate(this.tomorrow.getDate() + 2);
@@ -46,7 +48,7 @@ export class DatepickerDemoComponent {
   }
 
   public disableTomorrow(): void {
-    this.dateDisabled = [{date: this.tomorrow, mode: 'day'}];
+    this.dateDisabled = [{ date: this.tomorrow, mode: 'day' }];
   }
 
   // todo: implement custom class cases
@@ -67,7 +69,7 @@ export class DatepickerDemoComponent {
   }
 
   public disabled(date: Date, mode: string): boolean {
-    return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+    return (mode === 'day' && (date.getDay() === 0 || date.getDay() === 6));
   }
 
   public open(): void {

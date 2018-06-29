@@ -53,6 +53,7 @@ export class DatePickerInnerComponent implements OnInit, OnChanges {
   @Input() public yearColLimit: number;
   @Input() public dateDisabled: {date:Date, mode:string}[];
   @Input() public initDate: Date;
+  @Input() public monthNames: string[];
 
   @Output() public selectionDone: EventEmitter<Date> = new EventEmitter<Date>(undefined);
 
@@ -168,7 +169,7 @@ export class DatePickerInnerComponent implements OnInit, OnChanges {
   }
 
   public dateFilter(date: Date, format: string): string {
-    return this.dateFormatter.format(date, format);
+    return this.dateFormatter.format(date, format, this.monthNames);
   }
 
   public isActive(dateObject: any): boolean {

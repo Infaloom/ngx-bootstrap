@@ -36,7 +36,8 @@ export const DATEPICKER_CONTROL_VALUE_ACCESSOR: any = {
                       [shortcutPropagation]="shortcutPropagation"
                       [monthColLimit]="monthColLimit"
                       [yearColLimit]="yearColLimit"
-                      (selectionDone)="onSelectionDone($event)">
+                      (selectionDone)="onSelectionDone($event)"
+                      [monthNames]="monthNames">
       <daypicker tabindex="0"></daypicker>
       <monthpicker tabindex="0"></monthpicker>
       <yearpicker tabindex="0"></yearpicker>
@@ -88,6 +89,8 @@ export class DatePickerComponent implements ControlValueAccessor {
   @Input() public customClass: {date: Date, mode: string, clazz: string}[];
   /** array of disabled dates */
   @Input() public dateDisabled: {date: Date, mode: string}[];
+
+  @Input() public monthNames: string[];
 
   /** currently active date */
   @Input()
