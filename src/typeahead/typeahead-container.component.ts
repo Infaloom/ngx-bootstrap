@@ -11,7 +11,7 @@ import { TypeaheadMatch } from './typeahead-match.class';
   // tslint:disable-next-line
   template: `
   <template [ngIf]="!isBs4"><ul class="dropdown-menu">
-    <template ngFor let-match let-i="index" [ngForOf]="matches">
+    <ng-template ngFor let-match let-i="index" [ngForOf]="matches">
       <li *ngIf="match.isHeader()" class="dropdown-header">{{match}}</li>
       <li *ngIf="!match.isHeader()"
         [class.active]="isActive(match)"
@@ -30,10 +30,10 @@ import { TypeaheadMatch } from './typeahead-match.class';
             </template>
         </a>
       </li>
-    </template>
+    </ng-template>
   </ul></template>
   <template [ngIf]="isBs4">
-    <template ngFor let-match let-i="index" [ngForOf]="matches">
+    <ng-template ngFor let-match let-i="index" [ngForOf]="matches">
        <h6 *ngIf="match.isHeader()" class="dropdown-header">{{match}}</h6>
        <template [ngIf]="!match.isHeader() && !itemTemplate">
           <button
@@ -54,7 +54,7 @@ import { TypeaheadMatch } from './typeahead-match.class';
           </template>
          </button>
       </template>
-    </template>
+    </ng-template>
   </template>
 `,
   // tslint:disable

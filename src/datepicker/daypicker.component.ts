@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import { isBs3 } from '../utils/ng2-bootstrap-config';
 import { DatePickerInnerComponent } from './datepicker-inner.component';
 
@@ -58,7 +58,7 @@ const TEMPLATE_OPTIONS: any = {
     </tr>
   </thead>
   <tbody>
-    <template ngFor [ngForOf]="rows" let-rowz="$implicit" let-index="index">
+    <ng-template ngFor [ngForOf]="rows" let-rowz="$implicit" let-index="index">
       <tr *ngIf="!(datePicker.onlyCurrentMonth && rowz[0].secondary && rowz[6].secondary)">
         <td *ngIf="datePicker.showWeeks" class="h6" class="text-center">
           <em>{{ weekNumbers[index] }}</em>
@@ -73,7 +73,7 @@ const TEMPLATE_OPTIONS: any = {
           </button>
         </td>
       </tr>
-    </template>
+    </ng-template>
   </tbody>
 </table>
   `
